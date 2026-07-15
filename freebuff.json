@@ -1,0 +1,6 @@
+{
+  "install": "bun install",
+  "dev": "node server.js",
+  "preview": "node server.js",
+  "build": "echo 'No build step required — static HTML project'"
+}
