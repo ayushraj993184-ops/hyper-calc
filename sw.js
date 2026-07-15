@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hyper-calc-cache-v5';
+const CACHE_NAME = 'hyper-calc-cache-v6';
 
 // Core assets to cache immediately on installation (App Shell)
 const PRECACHE_ASSETS = [
