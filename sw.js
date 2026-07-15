@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hyper-calc-cache-v6';
+const CACHE_NAME = 'hyper-calc-cache-v7';
 
 // Core assets to cache immediately on installation (App Shell)
 const PRECACHE_ASSETS = [
@@ -6,10 +6,10 @@ const PRECACHE_ASSETS = [
   'index.html',
   'manifest.json',
   'icon.svg',
-  'icon-192.png',
-  'icon-512.png',
-  'screenshot-mobile.png',
-  'screenshot-desktop.png',
+  'icon-192.png?v=2',
+  'icon-512.png?v=2',
+  'screenshot-mobile.png?v=2',
+  'screenshot-desktop.png?v=2',
   'chart.umd.min.js',
   'jspdf.umd.min.js'
 ];
