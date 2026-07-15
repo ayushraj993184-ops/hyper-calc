@@ -50,10 +50,15 @@ self.addEventListener('activate', event => {
 
 // Advanced fetch interception with specific offline strategies
 self.addEventListener('fetch', event => {
-  const requestUrl = new URL(event.request.url);
-
   // Skip non-GET requests
   if (event.request.method !== 'GET') {
+    return;
+  }
+
+  const requestUrl = new URL(event.request.url);
+
+  // Only handle http/https requests (prevents crashes from chrome-extension or data URLs)
+  if (!requestUrl.protocol.startsWith('http')) {
     return;
   }
 
@@ -87,6 +92,11 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Only handle same-origin requests or specific safe-to-cache external assets
+  if (requestUrl.origin !== self.location.origin) {
+    return;
+  }
+
   // Stale-While-Revalidate for app shell files and same-origin assets
   event.respondWith(
     caches.match(event.request).then(cachedResponse => {
@@ -102,6 +112,11 @@ self.addEventListener('fetch', event => {
         })
         .catch(err => {
           console.log('[Service Worker] Fetch failed (offline):', err);
+          // If we have a cached response, return it, otherwise propagate error
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          throw err;
         });
 
       // Return the cached response immediately if available, otherwise wait for the network fetch
