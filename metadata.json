@@ -1,0 +1,8 @@
+{
+  "name": "Hyper Calc Pro",
+  "description": "A feature-rich, mobile-optimized scientific calculator with unit conversion, currency exchange, function graphing, and matrix operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

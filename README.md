@@ -1,11 +1,32 @@
-<div align="center">
+# ⚡ Hyper Calc Pro
+A feature‑rich, mobile‑optimized scientific calculator with unit conversion, currency exchange, function graphing, and matrix operations — all in a single HTML file.
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## ✨ Features
 
-  <h1>Built with AI Studio</h2>
+- **Advanced Calculator** – standard arithmetic, trigonometry (DEG/RAD), logarithms, exponentiation, factorial, parentheses, memory (M+/MR/MC).
+- **Unit Converter** – length, weight, volume, speed, area, temperature.
+- **Currency Converter** – live exchange rates via ExchangeRate‑API (150+ currencies, fallback included).
+- **Function Grapher** – plot any function `f(x)` with adjustable range.
+- **Matrix 2×2** – addition, subtraction, multiplication, determinant.
+- **History** – persistent localStorage, click‑to‑recall, clear button.
+- **Dark / Light Theme** – toggle with localStorage persistence.
+- **Mobile‑First** – responsive, touch‑friendly.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🛠️ Technologies
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+- Vanilla JavaScript
+- Chart.js 4.4.1
+- ExchangeRate‑API (free)
+- CSS custom properties
 
-</div>
+## 🚀 Live Demo
+
+https://ayushraj993184-ops.github.io/hyper-calc/
+
+## 📦 Installation
+
+Simply open `index.html` in any modern browser. No build tools required.
+
+## 📄 License
+
+MIT

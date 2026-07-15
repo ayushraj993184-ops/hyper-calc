@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Rounded corner outer background card matching the user's design -->
+  <rect x="64" y="64" width="384" height="384" rx="72" ry="72" fill="#cbd5e0" />
+
+  <!-- Calculator body -->
+  <rect x="150" y="106" width="212" height="300" rx="20" ry="20" fill="#1e2029" />
+
+  <!-- Calculator screen display -->
+  <rect x="172" y="126" width="168" height="64" rx="10" ry="10" fill="#717477" />
+
+  <!-- Buttons Row 1 -->
+  <circle cx="190" cy="230" r="20" fill="#e2e8f0" />
+  <circle cx="256" cy="230" r="20" fill="#e2e8f0" />
+  <circle cx="322" cy="230" r="20" fill="#ffa843" />
+
+  <!-- Buttons Row 2 -->
+  <circle cx="190" cy="290" r="20" fill="#e2e8f0" />
+  <circle cx="256" cy="290" r="20" fill="#e2e8f0" />
+  <circle cx="322" cy="290" r="20" fill="#ffa843" />
+
+  <!-- Buttons Row 3 -->
+  <!-- Long wide pill button -->
+  <rect x="170" y="330" width="106" height="40" rx="20" ry="20" fill="#e2e8f0" />
+  <!-- Final orange circle button -->
+  <circle cx="322" cy="350" r="20" fill="#ffa843" />
+</svg>

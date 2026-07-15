@@ -1,0 +1,24 @@
+{
+  "name": "hyper-calc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A feature-rich, mobile-optimized scientific calculator with unit conversion, currency exchange, function graphing, and matrix operations.",
+  "scripts": {
+    "dev": "node server.js",
+    "preview": "node server.js",
+    "build": "echo 'No build step required — static HTML project'",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sharp": "^0.35.3"
+  },
+  "keywords": [
+    "calculator",
+    "scientific-calculator",
+    "unit-converter",
+    "graphing",
+    "matrix"
+  ],
+  "license": "MIT"
+}
