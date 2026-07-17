@@ -21,11 +21,7 @@ A feature‑rich, mobile‑optimized scientific calculator with unit conversion,
 
 ## 🚀 Live Demo
 
-https://ayushraj993184-ops.github.io/hyper-calc/
-
-## 📦 Installation
-
-Simply open `index.html` in any modern browser. No build tools required.
+hypercalcpro.vercel.app
 
 ## 📄 License
 
