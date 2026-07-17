@@ -21,7 +21,7 @@ A feature‑rich, mobile‑optimized scientific calculator with unit conversion,
 
 ## 🚀 Live Demo
 
-hypercalcpro.vercel.app
+[https://hypercalcpro.vercel.app/]
 
 ## 📄 License
 
