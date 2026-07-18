@@ -19,10 +19,6 @@ A feature‑rich, mobile‑optimized scientific calculator with unit conversion,
 - ExchangeRate‑API (free)
 - CSS custom properties
 
-## 🚀 Live Demo
-
-[https://hypercalcpro.vercel.app/]
-
 ## 📄 License
 
 MIT
