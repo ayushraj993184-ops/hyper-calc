@@ -1020,7 +1020,10 @@
                 </div>
                 <div id="historyList"></div>
             </div>
-            <div id="debugInfo" class="debug-info">✓ ready</div>
+            <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+                <div id="debugInfo" class="debug-info" style="flex:1;">✓ ready</div>
+                <div id="offlineIndicator" style="display:none; font-size:0.6rem; background:#e74c5e; color:white; padding:3px 10px; border-radius:30px; font-weight:700; white-space:nowrap; letter-spacing:0.3px;">📡 OFFLINE</div>
+            </div>
         </div>
     </div>
 
@@ -6080,8 +6083,26 @@
     })();
 </script>
 <script>
+    // Track online/offline status
+    let isOnline = navigator.onLine;
+    const offlineIndicator = document.getElementById('offlineIndicator');
+    
+    function updateOnlineStatus() {
+        isOnline = navigator.onLine;
+        if (offlineIndicator) {
+            offlineIndicator.style.display = isOnline ? 'none' : 'inline-block';
+        }
+        const debugEl = document.getElementById('debugInfo');
+        if (debugEl) {
+            debugEl.textContent = isOnline ? '✓ online' : '⚠ offline — using cached data';
+        }
+    }
+    
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
     if ('serviceWorker' in navigator) {
-        // Automatically reload when a new service worker takes control
         let refreshing = false;
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (!refreshing) {
@@ -6093,8 +6114,20 @@
         navigator.serviceWorker.register('./sw.js')
             .then(reg => {
                 console.log('SW registered');
-                // Check for updates on load
-                reg.update();
+                reg.onupdatefound = () => {
+                    const installingWorker = reg.installing;
+                    if (installingWorker) {
+                        installingWorker.onstatechange = () => {
+                            if (installingWorker.state === 'installed') {
+                                if (navigator.serviceWorker.controller) {
+                                    console.log('[SW] Update available');
+                                }
+                            }
+                        };
+                    }
+                };
+                // Periodic update checks
+                setInterval(() => { reg.update(); }, 60 * 60 * 1000);
             })
             .catch(err => console.warn('SW failed', err));
     }
